@@ -1,17 +1,26 @@
 package models;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Aluguel {
-	private final long id;
-	private final long idItem;
-	private final long idLocatario;
-	private final String idLocador;
-	private final Date dataInicial;
-	private final String dataFinal;
-	private final String status;
+public class Aluguel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private int idItem;
+	private int idLocatario;
+	private int idLocador;
+	private String dataInicial;
+	private String dataFinal;
+	private String status;
 	
-	public Aluguel(long id, long idItem, long idLocatario, String idLocador, Date dataInicial, String dataFinal,
+	
+	public Aluguel() {
+		super();
+	}
+			
+	public Aluguel(int id, int idItem, int idLocatario, int idLocador, String dataInicial, String dataFinal,
 			String status) {
 		this.id = id;
 		this.idItem = idItem;
@@ -22,19 +31,19 @@ public class Aluguel {
 		this.status = status;
 	}
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public long getIdItem() {
+	public int getIdItem() {
 		return idItem;
 	}
-	public long getIdLocatario() {
+	public int getIdLocatario() {
 		return idLocatario;
 	}
-	public String getIdLocador() {
+	public int getIdLocador() {
 		return idLocador;
 	}
-	public Date getDataInicial() {
+	public String getDataInicial() {
 		return dataInicial;
 	}
 	public String getDataFinal() {

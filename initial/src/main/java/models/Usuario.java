@@ -1,17 +1,29 @@
 package models;
 
-public class Usuario {
+import java.io.Serializable;
 
-	private final long id;
-	private final String cpf;
-	private final String telefone;
-	private final String nome;
-	private final String email;
-	private final String dataDeNascimento;
-	private final String Senha;
-	private final Endereco endereco;
+public class Usuario implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String cpf;
+	private String telefone;
+	private String nome;
+	private String email;
+	private String dataDeNascimento;
+	private String senha;
+	private Endereco endereco = null;
 	
-	public Usuario(long id, String cpf, String telefone, String nome, String email, String dataDeNascimento,
+    //default constructor
+    public Usuario()
+    {
+     super();
+    }
+	
+	public Usuario(int id, String cpf, String telefone, String nome, String email, String dataDeNascimento,
 			String senha, Endereco endereco) {
 		this.endereco = endereco;
 		this.id = id;
@@ -20,9 +32,21 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 		this.dataDeNascimento = dataDeNascimento;
-		Senha = senha;
+		this.senha = senha;
 	}
-	public long getId() {
+	
+	public Usuario(int id, String cpf, String telefone, String nome, String email, String dataDeNascimento,
+			String senha) {
+		this.id = id;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.nome = nome;
+		this.email = email;
+		this.dataDeNascimento = dataDeNascimento;
+		this.senha = senha;
+	}
+	
+	public int getId() {
 		return id;
 	}
 	public String getCpf() {
@@ -41,7 +65,7 @@ public class Usuario {
 		return dataDeNascimento;
 	}
 	public String getSenha() {
-		return Senha;
+		return senha;
 	}
 	public Endereco getEndereco() {
 		return endereco;

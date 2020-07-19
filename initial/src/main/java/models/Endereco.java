@@ -1,16 +1,26 @@
 package models;
 
-public class Endereco {
-	private final long id;
-	private final String logradouro;
-	private final int numero;
-	private final String complemento;
-	private final String bairro;
-	private final String cep;
-	private final String cidade;
-	private final String uf;
+import java.io.Serializable;
+
+public class Endereco implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String logradouro;
+	private int numero;
+	private String complemento;
+	private String bairro;
+	private String cep;
+	private String cidade;
+	private String uf;
 	
-	public Endereco(long id, String logradouro, int numero, String complemento, String bairro, String cep,
+	public Endereco() {
+		
+	}
+	
+	public Endereco(int id, String logradouro, int numero, String complemento, String bairro, String cep,
 			String cidade, String uf) {
 		super();
 		this.id = id;
@@ -23,7 +33,7 @@ public class Endereco {
 		this.uf = uf;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
