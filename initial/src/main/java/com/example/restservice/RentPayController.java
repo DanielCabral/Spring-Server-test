@@ -28,8 +28,8 @@ public class RentPayController {
 	StubProxy stub = new StubProxy(); 
 	
 	@GetMapping("/login")
-	public Acesso login(@RequestParam(value = "name") String name,@RequestParam(value = "password") String password) throws RemoteException, SQLException {
-		boolean logou = stub.logar(name, password);
+	public Acesso login(@RequestParam(value = "email") String email,@RequestParam(value = "password") String password) throws RemoteException, SQLException {
+		boolean logou = stub.logar(email, password);
 		return new Acesso(logou);
 	}
 	
